@@ -10,7 +10,8 @@
     "express": "~3.0.6",
     "express3-handlebars": "~0.5.0",
     "nodealm": "~0.0.5",
-    "underscore": "~1.5.2"
+    "underscore": "~1.5.2",
+    "plos-search": "0.0.1"
   },
   "devDependencies": {
     "grunt": "~0.4.2",
