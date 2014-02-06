@@ -5,7 +5,6 @@ var express = require('express')
 
 ,	config = require('./lib/config')()
 ,	routes = require('./lib/router')
-,	helpers = require('./lib/views/helpers')
 ;
 
 // Creates express instance
@@ -17,14 +16,14 @@ app.configure(function() {
 	app.set('port', config.port);
 
 	// Sets location of views dir
-	app.set('views', __dirname + '/lib/views');
+	app.set('views', __dirname + '/lib/templates');
 
 	// Sets Handlebars as view template engine
 	app.engine('hbs', hbs({
 		extname: '.hbs',
-		layoutsDir: __dirname + '/lib/views/layouts/',
+		layoutsDir: __dirname + '/lib/templates/layouts/',
 		defaultLayout: 'main',
-		helpers: helpers
+		helpers: require('./lib/templates/helpers')
 	}));
 	app.set('view engine', 'hbs');
 
