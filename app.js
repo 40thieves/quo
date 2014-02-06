@@ -4,8 +4,8 @@ var express = require('express')
 ,	hbs = require('express3-handlebars')
 
 ,	config = require('./lib/config')()
-
 ,	routes = require('./lib/router')
+,	helpers = require('./lib/views/helpers')
 ;
 
 // Creates express instance
@@ -23,7 +23,8 @@ app.configure(function() {
 	app.engine('hbs', hbs({
 		extname: '.hbs',
 		layoutsDir: __dirname + '/lib/views/layouts/',
-		defaultLayout: 'main'
+		defaultLayout: 'main',
+		helpers: helpers
 	}));
 	app.set('view engine', 'hbs');
 

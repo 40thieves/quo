@@ -2,4 +2,23 @@
 
 <h3>Examining altmetrics over time</h3>
 
-<div id="article-list"></div>
+<table id="article-list">
+	<thead>
+		<tr>
+			<th>DOI</th>
+			<th>Journal</th>
+			<th>Title</th>
+			<th>Authors</th>
+		</tr>
+	</thead>
+	<tbody>
+		{{#each articles}}
+			<tr>
+				<td>{{this.id}}</td>
+				<td>{{this.journal}}</td>
+				<td>{{this.title_display}}</td>
+				<td>{{authors this.author_display}}</td>
+			</tr>
+		{{/each}}
+	</tbody>
+</table>
