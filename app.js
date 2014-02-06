@@ -42,6 +42,16 @@ app.configure(function() {
 
 	app.use(app.router);
 	app.use(express.static(path.join(__dirname, 'public')));
+
+	app.use(function(err, req, res, next) {
+		console.error('Internal Server Error: ' + err.message);
+		res.status(500);
+		res.render('500', {
+			err: err,
+			error: err.message,
+			statusCode: 500
+		});
+	});
 });
 
 // Dev only settings
