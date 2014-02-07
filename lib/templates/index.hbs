@@ -3,7 +3,39 @@
 <h3>Examining altmetrics over time</h3>
 
 <form action="search" method="get">
-	<label for="id">Enter a DOI</label>
+	<label for="everything">Keyword</label>
+	<input id="everything" name="everything" type="text">
+
+	<label for="author">Author</label>
+	<input id="author" name="author" type="text">
+
+	<label for="journal">Journal</label>
+	<select id="journal" name="journal">
+		<option value="">All Journals</option>
+		<option value="plos one">PLOS One</option>
+		<option value="plos genetics">PLOS Genetics</option>
+		<option value="plos pathogens">PLOS Pathogens</option>
+		<option value="plos one">PLOS One</option>
+		<option value="plos biology">PLOS Biology</option>
+		<option value="plos computational biology">PLOS Computational Biology</option>
+		<option value="plos medicine">PLOS Medicine</option>
+		<option value="plos neglected tropical diseases">PLOS Neglected Tropical Diseases</option>
+		<option value="plos collections">PLOS Collections</option>
+	</select>
+
+	<label for="subject">Subject Area</label>
+	<input id="subject" name="subject" type="text">
+	<small>Taxonomy available <a href="http://www.plosone.org/taxonomy">here</a></small>
+
+	<label for="publication_date">Publication Date</label>
+	<select id="publication_date">
+		<option>All Time</option>
+		<option>Last month</option>
+		<option>Last Year</option>
+		<option>Custom Date Range</option>
+	</select>
+
+	<label for="id">DOI</label>
 	<input id="id" name="id" type="text">
 
 	<button type="submit">Submit</button>
