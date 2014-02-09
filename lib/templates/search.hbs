@@ -2,23 +2,14 @@
 
 <h3>Examining altmetrics over time</h3>
 
-<table id="article-list">
-	<thead>
-		<tr>
-			<th>DOI</th>
-			<th>Journal</th>
-			<th>Title</th>
-			<th>Authors</th>
-		</tr>
-	</thead>
-	<tbody>
-		{{#each articles}}
-			<tr>
-				<td>{{this.id}}</td>
-				<td>{{this.journal}}</td>
-				<td>{{this.title_display}}</td>
-				<td>{{authors this.author_display}}</td>
-			</tr>
-		{{/each}}
-	</tbody>
-</table>
+<ul>
+	{{#each articles}}
+		<li>
+			<input type="checkbox" name="doi" value="{{this.id}}">
+			<h4><a href="{{doi}}">{{this.title_display}}</a></h4>
+			<p>{{authors this.author_display}}</p>
+			<p>{{this.journal}}</p>
+			<p>Published on {{date_format this.publication_date}}</p>
+		</li>
+	{{/each}}
+</ul>
