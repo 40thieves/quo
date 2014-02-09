@@ -41,7 +41,7 @@ app.configure(function() {
 	app.use(express.methodOverride());
 
 	app.use(app.router);
-	app.use(express.static(path.join(__dirname, 'public')));
+	app.use(express.static(path.join(__dirname, '/lib/public')));
 
 	app.use(function(err, req, res, next) {
 		console.error('Internal Server Error: ' + err.message);
