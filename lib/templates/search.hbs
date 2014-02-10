@@ -2,7 +2,7 @@
 
 <h3>Examining altmetrics over time</h3>
 
-<ul>
+<ul id="result-list">
 	{{#each articles}}
 		<li>
 			<input type="checkbox" name="doi" value="{{this.id}}">
@@ -13,3 +13,5 @@
 		</li>
 	{{/each}}
 </ul>
+
+<script type="text/javascript" src="js/results.js"></script>
