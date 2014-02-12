@@ -2,10 +2,26 @@ var express = require('express')
 ,	http = require('http')
 ,	path = require('path')
 ,	hbs = require('express3-handlebars')
+,	mongoose = require('mongoose')
 
 ,	config = require('./lib/config')()
 ,	routes = require('./lib/router')
 ;
+
+var connect = function() {
+	var options = {};
+	mongoose.connect(config.db.host, options);
+};
+connect();
+
+mongoose.connection.on('error', function(err) {
+	console.log(err);
+});
+
+mongoose.connection.on('disconnect', function() {
+	console.log('Mongoose: disconnected');
+	connect();
+});
 
 // Creates express instance
 var app = express();
@@ -61,8 +77,6 @@ app.configure('development', function() {
 });
 
 routes.createRoutes(app);
-
-// app.get('/', routes.index);
 
 http.createServer(app).listen(app.get('port'), function() {
 	console.log('Quo running on port ' + app.get('port'));
