@@ -6,3 +6,97 @@ body {
 a {
   color: #00B7FF;
 }
+
+body {
+	font: 10px sans-serif;
+}
+
+text {
+	font: 10px sans-serif;
+}
+
+.axis path, .axis line {
+	fill: none;
+	stroke: #000;
+	shape-rendering: crispEdges;
+}
+
+.circle {
+	stroke: #000;
+}
+
+.circle {
+	fill: #3cacfc;
+}
+
+.circle:hover {
+	fill: #fd8d3c;
+}
+
+.label {
+	fill: #777;
+}
+
+.year.label {
+	font: 500 196px 'Helvetica Neue';
+	fill: #ddd;
+}
+
+.year.label.active {
+	fill: #aaa;
+}
+
+.overlay {
+	fill: none;
+	pointer-events: all;
+	cursor: ew-resize;
+}
+
+/**
+ * Tooltip styles
+ */
+.d3-tip {
+	line-height: 1;
+	padding: 1px 8px;
+	background: rgba(0, 0, 0, 0.8);
+	color: #fff;
+	border-radius: 2px;
+	pointer-events: none;
+	max-width: 300px;
+}
+
+.d3-tip .title {
+	color: #fd8d3c;
+}
+
+.d3-tip .details strong {
+	color: #3cacfc;
+}
+
+/* Creates a small triangle extender for the tooltip */
+.d3-tip:after {
+	box-sizing: border-box;
+	display: inline;
+	font-size: 10px;
+	width: 100%;
+	line-height: 1;
+	color: rgba(0, 0, 0, 0.8);
+	position: absolute;
+	pointer-events: none;
+}
+
+/* Eastward tooltips */
+.d3-tip.e:after {
+	content: "\25C0";
+	margin: -4px 0 0 0;
+	top: 50%;
+	left: -8px;
+}
+
+/* Westward tooltips */
+.d3-tip.w:after {
+	content: "\25B6";
+	margin: -4px 0 0 -1px;
+	top: 50%;
+	left: 100%;
+}
