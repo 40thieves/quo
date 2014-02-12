@@ -2,17 +2,21 @@
 
 <h3>Examining altmetrics over time</h3>
 
-<ul id="result-list">
-	{{#each articles}}
-		<li>
-			<input type="checkbox" name="doi" value="{{this.id}}">
-			<h4><a href="{{doi}}">{{this.title_display}}</a></h4>
-			<p>{{authors this.author_display}}</p>
-			<p>{{this.journal}}</p>
-			<p>Published on {{date_format this.publication_date}}</p>
-		</li>
-	{{/each}}
-</ul>
+<form action="generate" method="post">
+	<ul id="result-list">
+		{{#each articles}}
+			<li>
+				<input type="checkbox" name="doi" value="{{this.id}}">
+				<h4><a href="{{doi}}">{{this.title_display}}</a></h4>
+				<p>{{authors this.author_display}}</p>
+				<p>{{this.journal}}</p>
+				<p>Published on {{date_format this.publication_date}}</p>
+			</li>
+		{{/each}}
+	</ul>
+
+	<button type="submit">Generate</button>
+</form>
 
 <script type="text/javascript" src="js/util.js"></script>
 <script type="text/javascript" src="js/results.js"></script>
