@@ -1,21 +1,23 @@
-<h1>Quo</h1>
+<header>
+	<h1>Quo</h1>
 
-<h3>Examining altmetrics over time</h3>
+	<h3>Examining altmetrics over time</h3>
+</header>
 
-<form action="search" method="get">
-	<fieldset>
-		<label for="everything">Keyword</label>
-		<input id="everything" name="everything" type="search">
+<form action="search" method="get" role="form">
+	<fieldset class="form-group col-md-12">
+		<label for="everything" class="control-label">Keyword</label>
+		<input id="everything" name="everything" type="search" class="form-control" placeholder="Keyword">
 	</fieldset>
 
-	<fieldset>
-		<label for="author">Author</label>
-		<input id="author" name="author" type="search">
+	<fieldset class="form-group col-md-12">
+		<label for="author" class="control-label">Author</label>
+		<input id="author" name="author" type="search" class="form-control" placeholder="Author">
 	</fieldset>
 
-	<fieldset>
-		<label for="journal">Journal</label>
-		<select id="journal" name="journal">
+	<fieldset class="form-group col-md-12">
+		<label for="journal" class="control-label">Journal</label>
+		<select id="journal" name="journal" class="form-control">
 			<option value="">All Journals</option>
 			<option value="plos one">PLOS One</option>
 			<option value="plos genetics">PLOS Genetics</option>
@@ -29,15 +31,15 @@
 		</select>
 	</fieldset>
 
-	<fieldset>
-		<label for="subject">Subject Area</label>
-		<input id="subject" name="subject" type="search">
-		<small>Taxonomy available <a href="http://www.plosone.org/taxonomy">here</a></small>
+	<fieldset class="form-group col-md-12">
+		<label for="subject" class="control-label">Subject Area</label>
+		<input id="subject" name="subject" type="search" class="form-control" placeholder="Subject Area">
+		<small class="help-block">Taxonomy available <a href="http://www.plosone.org/taxonomy">here</a></small>
 	</fieldset>
 
-	<fieldset>
-		<label for="publication_date">Publication Date</label>
-		<select id="publication_date">
+	<fieldset class="form-group col-md-12">
+		<label for="publication_date" class="control-label">Publication Date</label>
+		<select id="publication_date" class="form-control">
 			<option value="">All Time</option>
 			<option>Last month</option>
 			<option>Last Year</option>
@@ -45,13 +47,13 @@
 		</select>
 	</fieldset>
 
-	<fieldset>
-		<label for="id">DOI</label>
-		<input id="id" name="id" type="search" value="">
+	<fieldset class="form-group col-md-12">
+		<label for="id" class="control-label">DOI</label>
+		<input id="id" name="id" type="search" value="" class="form-control" placeholder="DOI">
 	</fieldset>
 
-	<fieldset>
-		<button type="submit">Submit</button>
+	<fieldset class="form-group col-md-12">
+		<button type="submit" class="btn btn-primary btn-block">Search</button>
 	</fieldset>
 </form>
 
