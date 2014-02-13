@@ -60,13 +60,24 @@ app.configure(function() {
 	app.use(express.static(path.join(__dirname, '/lib/public')));
 
 	app.use(function(err, req, res, next) {
-		console.error('Internal Server Error: ' + err.message);
-		res.status(500);
-		res.render('500', {
-			err: err,
-			error: err.message,
-			statusCode: 500
-		});
+		console.error(err.name + ' Error: ' + err.message);
+
+		if (err.status) {
+			res.status(err.status);
+
+			if (err.view)
+				res.render(err.view, err);
+			else
+				res.render(err.status, err);
+		}
+		else {
+			res.status(500);
+
+			res.render('500', {
+				message: err.message,
+				status: 500
+			});
+		}
 	});
 });
 
