@@ -1,21 +1,24 @@
-<h1>Quo</h1>
+<header>
+	<h1>Quo</h1>
+	<h3>Examining altmetrics over time</h3>
+</header>
 
-<h3>Examining altmetrics over time</h3>
-
-<form action="generate" method="post">
-	<ul id="result-list">
+<form action="generate" method="post" role="form" class="search-results">
+	<ul id="result-list" class="list-unstyled">
 		{{#each articles}}
-			<li>
-				<input type="checkbox" name="doi" value="{{this.id}}">
-				<h4><a href="{{doi}}">{{this.title_display}}</a></h4>
-				<p>{{authors this.author_display}}</p>
-				<p>{{this.journal}}</p>
-				<p>Published on {{date_format this.publication_date}}</p>
+			<li class="checkbox">
+				<input type="checkbox" name="doi" value="{{this.id}}" id="article-{{this.id}}">	
+				<h4><a href="http://dx.doi.org/{{id}}">{{this.title_display}}</a></h4>
+				<label for="article-{{this.id}}">
+					<p>{{authors this.author_display}}</p>
+					<p>{{this.journal}}</p>
+					<p>Published on {{date_format this.publication_date}}</p>
+				</label>
 			</li>
 		{{/each}}
 	</ul>
 
-	<button type="submit">Generate</button>
+	<button type="submit" class="btn btn-primary">Generate</button>
 </form>
 
 <script type="text/javascript" src="js/util.js"></script>
