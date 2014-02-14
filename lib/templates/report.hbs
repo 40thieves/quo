@@ -73,46 +73,4 @@
 <script type="text/javascript" src="/js/lib/d3-tip.js"></script>
 <script type="text/javascript" src="/js/lib/chart.js"></script>
 
-<script type="text/javascript">
-	var reportId = '{{this._id}}';
-
-	var chart = new AlmChart({
-		el: document.querySelector('#chart'),
-		url: '/api/report/' + reportId
-	});
-
-	chart.draw();
-
-	var xAxis = document.querySelector('#x-axis')
-	,	yAxis = document.querySelector('#y-axis')
-	;
-
-	xAxis.addEventListener('change', function(e) {
-		var x = { text: this.options[e.target.selectedIndex].text, value: e.target.value };
-		var y = { text: yAxis.options[yAxis.selectedIndex].text, value: yAxis.value };
-
-		changeAxis(x, y);
-	});
-
-	yAxis.addEventListener('change', function(e) {
-		var y = { text: this.options[e.target.selectedIndex].text, value: e.target.value };
-		var x = { text: xAxis.options[xAxis.selectedIndex].text, value: xAxis.value };
-
-		changeAxis(x, y);
-	});
-
-	function changeAxis(x, y) {
-		chart.setConfig({
-			dataSourceKeys: {
-				x: x.value,
-				y: y.value
-			},
-			dataSourceNames: {
-				x: x.text,
-				y: y.text
-			}
-		});
-
-		chart.draw();
-	}
-</script>
+<script type="text/javascript" src="/js/report.js"></script>
