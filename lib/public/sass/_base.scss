@@ -3,7 +3,22 @@ body {
 }
 
 header {
-	margin-bottom: 30px;
+	display: inline-block;
+	width: 100%;
+	margin-bottom: 20px;
+
+	.title {
+		width: calc(100% - 7.5%);
+		float: left;
+	}
+
+	.article-counter-wrapper {
+		float: left;
+		width: 7.5%;
+		position: relative;
+		margin-top: 20px;
+		margin-bottom: 0;
+	}
 }
 
 #result-list {
@@ -16,9 +31,4 @@ header {
 	label p {
 		margin: 0 0 3px;
 	}
-}
-
-.article-counter {
-	width: 7.5%;
-	position: relative;
 }
