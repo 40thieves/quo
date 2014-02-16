@@ -1,0 +1,66 @@
+.loading-animation {
+	position: absolute;
+	top: 50%;
+	left: calc(50% - 30px);
+}
+
+.loading-animation span {
+	position: relative;
+	-webkit-animation: upAnimation;
+	animation: upAnimation;
+	-webkit-animation-duration: 900ms;
+	animation-duration: 900ms;
+	-webkit-animation-iteration-count: infinite;
+	animation-iteration-count: infinite;
+}
+
+.loading-animation .dot1 {
+	-webkit-animation-delay: 200ms;
+	animation-delay: 200ms;
+}
+
+.loading-animation .dot2 {
+	-webkit-animation-delay: 300ms;
+	animation-delay: 300ms;
+}
+
+.loading-animation .dot3 {
+	-webkit-animation-delay: 400ms;
+	animation-delay: 400ms;
+}
+
+@-webkit-keyframes upAnimation {
+	0% {
+		bottom: 0;
+	}
+
+	25% {
+		bottom: 6px;
+	}
+
+	50% {
+		bottom: 0;
+	}
+
+	100% {
+		bottom: 0;
+	}
+}
+
+@keyframes upAnimation {
+	0% {
+		bottom: 0;
+	}
+
+	25% {
+		bottom: 6px;
+	}
+
+	50% {
+		bottom: 0;
+	}
+
+	100% {
+		bottom: 0;
+	}
+}
