@@ -18,12 +18,12 @@
 	<ul id="result-list" class="list-unstyled">
 		{{#each articles}}
 			<li class="checkbox">
-				<input type="checkbox" name="doi" value="{{this.id}}" id="article-{{this.id}}">	
+				<input type="checkbox" name="doi" value="{{this.id}}" id="article-{{convert_doi_to_id this.id}}">	
 				<h4><a href="http://dx.doi.org/{{id}}">{{this.title_display}}</a></h4>
-				<label for="article-{{this.id}}">
-					<p>{{authors this.author_display}}</p>
-					<p>{{this.journal}}</p>
-					<p>Published on {{date_format this.publication_date}}</p>
+				<label for="article-{{convert_doi_to_id this.id}}">
+					<p class="authors">{{authors this.author_display}}</p>
+					<p class="journal">{{this.journal}}</p>
+					<p class="publication_date">Published on {{date_format this.publication_date}}</p>
 				</label>
 			</li>
 		{{/each}}
