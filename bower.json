@@ -1,0 +1,25 @@
+{
+  "name": "node-quo",
+  "version": "0.0.1",
+  "homepage": "https://github.com/40thieves/quo",
+  "authors": [
+    "Alasdair Smith <alasdairsmith100@gmail.com>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "twbs-bootstrap-sass": "~3.0"
+  },
+  "exportsOverride": {
+    "twbs-bootstrap-sass": {
+      "scss": "vendor/assets/stylesheets/bootstrap/*.scss"
+    }
+  }
+}

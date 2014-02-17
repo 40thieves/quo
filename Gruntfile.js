@@ -4,6 +4,20 @@ module.exports = function(grunt) {
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
 
+		bower: {
+			install: {
+				options: {
+					targetDir: './lib/public/sass/bootstrap',
+					layout: function(type, component) {
+						return '';
+					},
+					install: true,
+					cleanTargetDir: true,
+					cleanBowerDir: true,
+					bowerOptions: {}
+				}
+			}
+		},
 		concurrent: {
 			dev: {
 				tasks: ['nodemon', 'watch'],
@@ -44,13 +58,14 @@ module.exports = function(grunt) {
 		}
 	});
 
+	grunt.loadNpmTasks('grunt-bower-task');
 	grunt.loadNpmTasks('grunt-concurrent');
 	grunt.loadNpmTasks('grunt-nodemon');
+	grunt.loadNpmTasks('grunt-contrib-sass');
 	grunt.loadNpmTasks('grunt-shell-spawn');
 	grunt.loadNpmTasks('grunt-contrib-watch');
-	grunt.loadNpmTasks('grunt-sass');
 
-	// grunt.registerTask('default', ['shell', 'nodemon']);
 	grunt.registerTask('default', ['shell', 'concurrent']);
+	grunt.registerTask('build', ['bower:install']);
 
 };
