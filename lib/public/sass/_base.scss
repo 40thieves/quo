@@ -8,6 +8,8 @@ header {
 	margin-bottom: 20px;
 
 	.title {
+		color: $headings-color;
+		text-decoration: none;
 		width: calc(100% - 7.5%);
 		float: left;
 	}
