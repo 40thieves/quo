@@ -40,7 +40,7 @@ module.exports = function(grunt) {
 		},
 		shell: {
 			mongo: {
-				command: 'mongod',
+				command: 'mongod --config /usr/local/etc/mongod.conf',
 				options: {
 					async: true
 				}
@@ -65,7 +65,7 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-shell-spawn');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 
-	grunt.registerTask('default', ['shell', 'concurrent']);
+	grunt.registerTask('default', ['shell:mongo', 'concurrent']);
 	grunt.registerTask('build', ['bower:install']);
 
 };
