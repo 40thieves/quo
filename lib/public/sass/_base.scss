@@ -43,3 +43,14 @@ header {
 .show {
 	display: block !important;
 }
+
+#selectors {
+	margin-bottom: 8px;
+	margin-top: -10px;
+
+	button {
+		font-size: 12px;
+		padding: 0;
+		margin-right: 8px;
+	}
+}
