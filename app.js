@@ -8,6 +8,7 @@ var express = require('express')
 ,	routes = require('./lib/router')
 ;
 
+// Database connection initialisation
 var connect = function() {
 	var options = {};
 	mongoose.connect(config.db.host, options);
@@ -56,20 +57,25 @@ app.configure(function() {
 	// Sets up simulation for DELETE & PUT
 	app.use(express.methodOverride());
 
+	// Sets up router
 	app.use(app.router);
-	app.use(express.static(path.join(__dirname, '/lib/public')));
+	app.use(express.static(path.join(__dirname, '/lib/public'))); // Defines static routes (JS/CSS assets)
 
+	// Sets up error handing
 	app.use(function(err, req, res, next) {
 		console.error(err.name + ' Error: ' + err.message);
 
+		// If status is given, render error page with this status
 		if (err.status) {
 			res.status(err.status);
 
+			// If error has assigned view, use this view, otherwise render generic error view
 			if (err.view)
 				res.render(err.view, err);
 			else
 				res.render(err.status, err);
 		}
+		// Otherwise render generic error page
 		else {
 			res.status(500);
 
@@ -87,8 +93,10 @@ app.configure('development', function() {
 	app.use(express.errorHandler());
 });
 
+// Set up routes in router
 routes.createRoutes(app);
 
+// Start server
 http.createServer(app).listen(app.get('port'), function() {
 	console.log('Quo running on port ' + app.get('port'));
 });
