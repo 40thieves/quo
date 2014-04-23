@@ -8,8 +8,6 @@ header {
 	margin-bottom: 20px;
 
 	.title {
-		color: $headings-color;
-		text-decoration: none;
 		width: calc(100% - 7.5%);
 		float: left;
 	}
@@ -21,6 +19,11 @@ header {
 		margin-top: 20px;
 		margin-bottom: 0;
 	}
+}
+
+.title {
+	color: $headings-color;
+	text-decoration: none !important;
 }
 
 #result-list {
